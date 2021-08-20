@@ -27,6 +27,7 @@ module.exports = {
       },
     ],
   },
+
   target: ["web", "es5"],
   devServer: {
     watchContentBase: true,

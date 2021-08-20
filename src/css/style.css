@@ -3,5 +3,23 @@
 @tailwind utilities;
 
 html {
-  scroll-behaver: smooth;
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
+	line-height: 2;
+}
+
+/* Swiper */
+.swiper-pagination-bullet {
+	background: white;
+	width: 0.6rem;
+	height: 0.6rem;
+}
+.swiper-pagination-bullet-active {
+	background: #a78bfa;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 1rem;
 }

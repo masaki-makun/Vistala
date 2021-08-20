@@ -1,18 +1,975 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="js/bundle.js"></script>
-    <title>Vistala</title>
-  </head>
-  <body>
-    <h1 class="text-pink-300 font-bold text-center">Hello</h1>
-    <h2 class="title">TTL2</h2>
-    <p class="text-gray-300 font-bold">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-      eveniet.
-    </p>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+		<link rel="icon" href="../src/img/vistala__logo.png" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script defer src="js/bundle.js"></script>
+		<title>Vistala</title>
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="fixed top-0 left-0 z-50 items-center justify-between w-full bg-indigo-900 h-28">
+			<div
+				class="flex flex-row items-center justify-between h-full max-w-5xl gap-4 px-12 py-8 mx-auto"
+			>
+				<a
+					href="#"
+					class="flex flex-row items-center justify-start w-6 h-6 gap-3 transition-all duration-100 ease-in  hover:opacity-70"
+				>
+					<img src="../src/img/vistala__logo.png" alt="Logo" />
+					<p class="text-3xl font-bold text-white">Vistala</p>
+				</a>
+
+				<nav class="flex flex-row items-center justify-end w-full">
+					<!-- Nav-pc -->
+					<div class="hidden md:block js-panel-pc">
+						<ul class="flex flex-row gap-4">
+							<li>
+								<a
+									href="#top"
+									class="p-2 text-base font-normal text-white transition-all duration-100 ease-in  hover:opacity-70"
+									>Product</a
+								>
+							</li>
+							<li>
+								<a
+									href="#sec01"
+									class="p-2 text-base font-normal text-white transition-all duration-100 ease-in  hover:opacity-70"
+									>Activity</a
+								>
+							</li>
+							<li>
+								<a
+									href="#sec02"
+									class="p-2 text-base font-normal text-white transition-all duration-100 ease-in  hover:opacity-70"
+									>Features</a
+								>
+							</li>
+							<li>
+								<a
+									href="#sec03"
+									class="p-2 text-base font-normal text-white transition-all duration-100 ease-in  hover:opacity-70"
+									>Community</a
+								>
+							</li>
+							<li>
+								<a
+									href="#sec04"
+									class="px-6 py-4 text-base font-normal text-white transition-all duration-100 ease-in bg-indigo-800  hover:opacity-70"
+									>Login</a
+								>
+							</li>
+						</ul>
+					</div>
+					<!-- // Nav-pc -->
+
+					<!-- Nav-sp -->
+					<div
+						class="absolute top-0 right-0 z-50 w-0 h-screen transition-all duration-700 ease-in-out delay-150 transform translate-x-full bg-indigo-800 opacity-0  js-panel-sp"
+					>
+						<ul
+							class="flex flex-col items-center justify-center w-0 h-full gap-16 transition-all duration-1000 ease-in-out delay-75 transform translate-x-full opacity-0  js-list"
+						>
+							<li class="text-center js-list__item">
+								<a
+									href="#top"
+									class="w-0 p-4 text-2xl font-bold text-white transition-all  hover:opacity-70 js-list__item__link"
+									>Product</a
+								>
+							</li>
+							<li class="text-center js-list__item">
+								<a
+									href="#sec01"
+									class="w-0 p-4 text-2xl font-bold text-white transition-all  hover:opacity-70 js-list__item__link"
+									>Activity</a
+								>
+							</li>
+							<li class="text-center js-list__item">
+								<a
+									href="#sec02"
+									class="w-0 p-4 text-2xl font-bold text-white transition-all  hover:opacity-70 js-list__item__link"
+									>Features</a
+								>
+							</li>
+							<li class="text-center js-list__item">
+								<a
+									href="#sec03"
+									class="w-0 p-4 text-2xl font-bold text-white transition-all  hover:opacity-70 js-list__item__link"
+									>Community</a
+								>
+							</li>
+							<li class="text-center js-list__item">
+								<a
+									href="#sec04"
+									class="w-0 px-6 py-4 text-2xl font-bold text-white transition-all bg-indigo-900  hover:opacity-70 js-list__item__link"
+									>Login</a
+								>
+							</li>
+						</ul>
+					</div>
+					<!-- MenuButton -->
+					<div class="z-50 transition-all duration-100 ease-in-out js-menu-btn-wrap md:hidden">
+						<button
+							type="button"
+							class="text-2xl font-normal text-white transition-all duration-100 ease-in-out delay-75  hover:opacity-70 js-menu-btn"
+						>
+							<i class="fas fa-bars"></i>
+						</button>
+					</div>
+					<!-- // MenuButton -->
+
+					<!-- CloseButton -->
+					<div
+						class="z-50 hidden transition-all duration-100 ease-in-out opacity-0  js-close-btn-wrap md:hidden"
+					>
+						<button
+							type="button"
+							class="text-2xl font-normal text-white transition-all duration-100 ease-in-out delay-75  hover:opacity-70 js-close-btn"
+						>
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+					<!-- // CloseButton -->
+
+					<!-- Overlay -->
+					<div
+						class="absolute top-0 right-0 z-40 w-0 h-screen transition-all duration-700 ease-in-out delay-100 transform translate-x-full bg-black cursor-pointer  opacity-70 js-overlay"
+					></div>
+					<!-- // Overlay -->
+				</nav>
+			</div>
+		</header>
+		<!-- // Header -->
+
+		<!-- Best NFT Platform -->
+		<section id="sec01" class="overflow-hidden bg-indigo-900 mt-28">
+			<div
+				class="flex flex-col items-start justify-between max-w-5xl px-12 py-16 mx-auto md:flex-row"
+			>
+				<div class="flex flex-col items-start justify-between w-full gap-12 md:w-1/2">
+					<div class="flex flex-col items-start justify-start gap-4">
+						<p class="px-4 py-3 text-sm font-normal text-gray-300 bg-indigo-800 opacity-80">
+							BEST NFT PLATFORM
+						</p>
+						<h2 class="text-5xl font-bold leading-snug text-white md:text-6xl">
+							Let's Dive Into The World of
+							<span class="text-purple-400">NFT</span> With Us
+						</h2>
+						<div class="text-xl font-normal leading-tight text-gray-300 md:text-2xl">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, labore.
+						</div>
+					</div>
+					<div class="flex flex-row items-center justify-start w-full gap-4">
+						<button
+							link="#"
+							type="button"
+							class="w-1/2 py-4 font-normal text-white transition-all bg-purple-400 border border-purple-400  px-7 hover:opacity-70"
+						>
+							Explore Now
+						</button>
+						<button
+							link="#"
+							type="button"
+							class="w-1/2 py-4 font-normal text-white transition-all border  bg-none px-7 hover:opacity-70"
+						>
+							Shell NFT
+						</button>
+					</div>
+				</div>
+				<div class="flex justify-center w-full mt-16 md:justify-end md:w-1/2 md:mt-0">
+					<img
+						class="w-3/4 h-auto md:w-11/12 max-w-11/12"
+						src="../src/img/vistala__top__mv.jpg"
+						alt=""
+					/>
+				</div>
+			</div>
+		</section>
+		<!-- // Best NFT Platform -->
+
+		<!-- Trending Auctions -->
+		<section id="sec02" class="overflow-hidden bg-indigo-900">
+			<div class="max-w-5xl px-12 py-16 mx-auto">
+				<div class="flex flex-col items-start justify-between gap-8">
+					<div class="flex flex-row items-center justify-between w-full gap-4">
+						<h2 class="text-2xl font-semibold text-white md:text-3xl">Trending Auctions</h2>
+						<button
+							class="flex flex-row items-center justify-start gap-2 p-4 text-xl font-normal text-purple-400 transition-all  hover:opacity-70"
+						>
+							See More<i class="fas fa-arrow-right"></i>
+						</button>
+					</div>
+					<div>
+						<ul
+							class="grid justify-between w-full grid-cols-2  gap-x-4 md:flex-row md:items-start md:flex gap-y-12"
+						>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__card-img__01.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-end justify-between w-11/12 gap-2 p-4 overflow-hidden transform bg-gray-600  bottom-4 left-2/4 -translate-x-2/4"
+										>
+											<div class="flex flex-col items-start justify-start">
+												<p class="text-sm font-normal text-gray-400">Current Bid</p>
+												<h3 class="text-xl font-semibold text-gray-200">2.02 ETF</h3>
+											</div>
+											<div class="whitespace-nowrap">
+												<p class="text-base font-normal text-purple-400">14m 31s left</p>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start gap-3 py-4">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Nyonk pinter</h2>
+											<p class="text-sm font-normal text-gray-400">@Maliqinat</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-white transition-all ease-in bg-purple-400  hover:opacity-70"
+											>
+												Place a bid
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__card-img__02.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-end justify-between w-11/12 gap-2 px-4 py-3 overflow-hidden transform bg-gray-600  bottom-4 left-2/4 -translate-x-2/4"
+										>
+											<div class="flex flex-col items-start justify-start">
+												<p class="text-sm font-normal text-gray-400">Current Bid</p>
+												<h3 class="text-xl font-semibold text-gray-200">0.05 ETF</h3>
+											</div>
+											<div class="whitespace-nowrap">
+												<p class="text-base font-normal text-purple-400">32m 12s left</p>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start gap-3 py-4">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Koty Batica</h2>
+											<p class="text-sm font-normal text-gray-400">@Xxtonato</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-white transition-all ease-in bg-purple-400  hover:opacity-70"
+											>
+												Place a bid
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__card-img__03.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-end justify-between w-11/12 gap-2 px-4 py-3 overflow-hidden transform bg-gray-600  bottom-4 left-2/4 -translate-x-2/4"
+										>
+											<div class="flex flex-col items-start justify-start">
+												<p class="text-sm font-normal text-gray-400">Current Bid</p>
+												<h3 class="text-xl font-semibold text-gray-200">2.01 ETF</h3>
+											</div>
+											<div class="whitespace-nowrap">
+												<p class="text-base font-normal text-purple-400">26m 25s left</p>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start gap-3 py-4">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Awexon Color</h2>
+											<p class="text-sm font-normal text-gray-400">@Abimantix</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-white transition-all ease-in bg-purple-400  hover:opacity-70"
+											>
+												Place a bid
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__card-img__04.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-end justify-between w-11/12 gap-2 px-4 py-3 overflow-hidden transform bg-gray-600  bottom-4 left-2/4 -translate-x-2/4"
+										>
+											<div class="flex flex-col items-start justify-start">
+												<p class="text-sm font-normal text-gray-400">Current Bid</p>
+												<h3 class="text-xl font-semibold text-gray-200">2.31 ETF</h3>
+											</div>
+											<div class="whitespace-nowrap">
+												<p class="text-base font-normal text-purple-400">15m 30s left</p>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start gap-3 py-4">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Martin Bentham</h2>
+											<p class="text-sm font-normal text-gray-400">@Martin</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-white transition-all ease-in bg-purple-400  hover:opacity-70"
+											>
+												Place a bid
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- // Trending Auctions -->
+
+		<!-- Featured Creator -->
+		<section id="sec03" class="overflow-hidden bg-indigo-900">
+			<div class="max-w-5xl px-12 py-16 mx-auto">
+				<div class="flex flex-col items-start justify-between gap-8">
+					<div class="flex flex-row items-center justify-between w-full gap-4">
+						<h2 class="text-2xl font-semibold text-white md:text-3xl">Featured Creator</h2>
+						<button
+							class="flex flex-row items-center justify-start gap-2 p-4 text-xl font-normal text-purple-400 transition-all  hover:opacity-70"
+						>
+							See More<i class="fas fa-arrow-right"></i>
+						</button>
+					</div>
+					<div>
+						<ul
+							class="grid justify-between w-full grid-cols-2  gap-x-4 md:flex-row md:items-start md:flex gap-y-12"
+						>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__creator-img__01.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-center justify-center object-cover w-20 h-20 gap-4 p-1 bg-indigo-800 border border-indigo-800 rounded-full  -bottom-10 left-4"
+										>
+											<img
+												src="../src/img/vistala__creator-ico__01.jpg"
+												alt=""
+												class="object-cover w-16 h-16 rounded-full"
+											/>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Diana bara</h2>
+											<p class="text-base font-normal text-gray-400">
+												Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam,
+												deserunt.t
+											</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-purple-400 transition-all border border-purple-400  bg-none hover:opacity-70"
+											>
+												Follow
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__creator-img__02.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-center justify-center object-cover w-20 h-20 gap-4 p-1 bg-indigo-800 border border-indigo-800 rounded-full  -bottom-10 left-4"
+										>
+											<img
+												src="../src/img/vistala__creator-ico__02.jpg"
+												alt=""
+												class="object-cover w-16 h-16 rounded-full"
+											/>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Biosa Ajoa</h2>
+											<p class="text-base font-normal text-gray-400">
+												Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam,
+												deserunt.t
+											</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-purple-400 transition-all border border-purple-400  bg-none hover:opacity-70"
+											>
+												Follow
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__creator-img__03.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-center justify-center object-cover w-20 h-20 gap-4 p-1 bg-indigo-800 border border-indigo-800 rounded-full  -bottom-10 left-4"
+										>
+											<img
+												src="../src/img/vistala__creator-ico__03.jpg"
+												alt=""
+												class="object-cover w-16 h-16 rounded-full"
+											/>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Jannie Brot</h2>
+											<p class="text-base font-normal text-gray-400">
+												Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam,
+												deserunt.t
+											</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-purple-400 transition-all border border-purple-400  bg-none hover:opacity-70"
+											>
+												Follow
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="w-full overflow-hidden bg-indigo-800 md:w-2/4">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__creator-img__04.jpg" alt="" />
+										<div
+											class="absolute flex flex-row items-center justify-center object-cover w-20 h-20 gap-4 p-1 bg-indigo-800 border border-indigo-800 rounded-full  -bottom-10 left-4"
+										>
+											<img
+												src="../src/img/vistala__creator-ico__04.jpg"
+												alt=""
+												class="object-cover w-16 h-16 rounded-full"
+											/>
+										</div>
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="flex flex-col items-start w-full gap-1">
+											<h2 class="text-2xl font-semibold text-white">Robert Tan</h2>
+											<p class="text-base font-normal text-gray-400">
+												Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam,
+												deserunt.t
+											</p>
+										</div>
+										<div class="w-full">
+											<button
+												class="w-full px-4 py-3 font-normal text-purple-400 transition-all border border-purple-400  bg-none hover:opacity-70"
+											>
+												Follow
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- // Featured Creator -->
+
+		<!-- Featured Artworks -->
+		<section id="sec04" class="overflow-hidden bg-indigo-900">
+			<div class="max-w-5xl px-12 py-16 mx-auto">
+				<div class="flex flex-col items-start justify-between gap-8">
+					<div class="flex flex-row items-center justify-between w-full gap-4">
+						<h2 class="text-2xl font-semibold text-white md:text-3xl">Featured Artworks</h2>
+					</div>
+					<div class="">
+						<ul
+							class="grid items-start justify-between w-full grid-cols-2  md:grid-cols-4 gap-x-4 gap-y-12"
+						>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__01.jpg.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Kitaka artwing</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__01.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@whisalyepa</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.56 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__02.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Colory Basyt</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__02.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@jawarapant</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.42 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__03.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Buet artiday</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__03.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@marselya25</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.12 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__04.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Redyana puluk</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__04.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@kurosogny</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.73 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__05.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Bundyer arbat</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__05.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@vintilan</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.89 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__06.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Wistaya Bajor</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__06.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@particaly</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.13 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__07.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Lorek ragran</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__07.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@marknon</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.98 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="overflow-hidden bg-indigo-800">
+								<div>
+									<div class="relative">
+										<img src="../src/img/vistala__artwork-img__08.jpg" alt="" class="" />
+									</div>
+									<div class="flex flex-col items-start justify-start px-4 py-8 mt-6 gap-7">
+										<div class="relative flex flex-col items-start w-full gap-4">
+											<h2 class="text-2xl font-semibold text-white">Kitaka artwing</h2>
+											<div class="flex flex-row items-center justify-start gap-2 p-1">
+												<img
+													src="../src/img/vistala__creator-ico__08.jpg"
+													alt=""
+													class="object-cover w-10 h-10 rounded-full"
+												/>
+												<a
+													href=""
+													class="p-2 text-base font-semibold text-purple-400 transition-all  hover:opacity-70"
+													>@qutekhiila</a
+												>
+											</div>
+										</div>
+										<div class="flex flex-col items-start w-full gap-1">
+											<p class="text-sm font-normal text-gray-500">Reserve price</p>
+											<h2 class="text-xl font-semibold text-indigo-500">1.14 ETH</h2>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- // Featured Artworks -->
+
+		<!-- Customer Reviews -->
+		<section id="sec05" class="overflow-hidden bg-indigo-900">
+			<div class="max-w-5xl px-12 py-16 mx-auto">
+				<div class="p-8 bg-indigo-800">
+					<!-- Swiper -->
+					<div class="pb-8 swiper-container">
+						<div class="swiper-wrapper">
+							<div
+								class="flex flex-col items-start justify-start gap-6 p-8 text-white bg-indigo-800  swiper-slide"
+							>
+								<div>
+									<p class="text-xl leading-normal text-indigo-400">
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate illum nulla
+										impedit exercitationem excepturi atque dignissimos delectus ut est sequi?
+										Repellendus sunt quis itaque et ipsa, expedita voluptatum ducimus? Ut.
+									</p>
+								</div>
+								<div class="flex flex-row items-center justify-start gap-4 p-1">
+									<div
+										class="flex flex-col items-center justify-center object-cover w-12 h-12 p-1 bg-purple-400 border border-purple-400 rounded-full "
+									>
+										<img
+											src="../src/img/vistala__swiper-creator-ico__01.jpg"
+											alt=""
+											class="object-cover w-10 h-10 rounded-full"
+										/>
+									</div>
+									<div class="flex flex-col items-start justify-start">
+										<p class="text-base font-semibold text-indigo-500">Luis Calvillo</p>
+										<p class="text-base font-normal text-gray-500">Customer Services</p>
+									</div>
+								</div>
+							</div>
+							<div
+								class="flex flex-col items-start justify-start gap-6 p-8 text-white bg-indigo-800  swiper-slide"
+							>
+								<div>
+									<p class="text-xl leading-normal text-indigo-400">
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate illum nulla
+										impedit exercitationem excepturi atque dignissimos delectus ut est sequi?
+										Repellendus sunt quis itaque et ipsa, expedita voluptatum ducimus? Ut.
+									</p>
+								</div>
+								<div class="flex flex-row items-center justify-start gap-4 p-1">
+									<div
+										class="flex flex-col items-center justify-center object-cover w-12 h-12 p-1 bg-purple-400 border border-purple-400 rounded-full "
+									>
+										<img
+											src="../src/img/vistala__swiper-creator-ico__02.jpg"
+											alt=""
+											class="object-cover w-10 h-10 rounded-full"
+										/>
+									</div>
+									<div class="flex flex-col items-start justify-start">
+										<p class="text-base font-semibold text-indigo-500">Andre Gaben</p>
+										<p class="text-base font-normal text-gray-500">Customer Services</p>
+									</div>
+								</div>
+							</div>
+							<div
+								class="flex flex-col items-start justify-start gap-6 p-8 text-white bg-indigo-800  swiper-slide"
+							>
+								<div>
+									<p class="text-xl leading-normal text-indigo-400">
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate illum nulla
+										impedit exercitationem excepturi atque dignissimos delectus ut est sequi?
+										Repellendus sunt quis itaque et ipsa, expedita voluptatum ducimus? Ut.
+									</p>
+								</div>
+								<div class="flex flex-row items-center justify-start gap-4 p-1">
+									<div
+										class="flex flex-col items-center justify-center object-cover w-12 h-12 p-1 bg-purple-400 border border-purple-400 rounded-full "
+									>
+										<img
+											src="../src/img/vistala__swiper-creator-ico__03.jpg"
+											alt=""
+											class="object-cover w-10 h-10 rounded-full"
+										/>
+									</div>
+									<div class="flex flex-col items-start justify-start">
+										<p class="text-base font-semibold text-indigo-500">Dina Moris</p>
+										<p class="text-base font-normal text-gray-500">Customer Services</p>
+									</div>
+								</div>
+							</div>
+							<div
+								class="flex flex-col items-start justify-start gap-6 p-8 text-white bg-indigo-800  swiper-slide"
+							>
+								<div>
+									<p class="text-xl leading-normal text-indigo-400">
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate illum nulla
+										impedit exercitationem excepturi atque dignissimos delectus ut est sequi?
+										Repellendus sunt quis itaque et ipsa, expedita voluptatum ducimus? Ut.
+									</p>
+								</div>
+								<div class="flex flex-row items-center justify-start gap-4 p-1">
+									<div
+										class="flex flex-col items-center justify-center object-cover w-12 h-12 p-1 bg-purple-400 border border-purple-400 rounded-full "
+									>
+										<img
+											src="../src/img/vistala__swiper-creator-ico__04.jpg"
+											alt=""
+											class="object-cover w-10 h-10 rounded-full"
+										/>
+									</div>
+									<div class="flex flex-col items-start justify-start">
+										<p class="text-base font-semibold text-indigo-500">Mike Hadson</p>
+										<p class="text-base font-normal text-gray-500">Customer Services</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mt-4 swiper-pagination"></div>
+					</div>
+					<!-- // Swiper -->
+				</div>
+			</div>
+		</section>
+		<!-- // Customer Reviews -->
+
+		<!-- Footer -->
+		<footer class="w-full overflow-hidden bg-indigo-900">
+			<div
+				class="flex flex-col items-start justify-between max-w-5xl gap-16 px-12 py-8 mx-auto  md:gap-4 md:flex-row mb-28"
+			>
+				<div class="flex flex-col items-start justify-start w-full gap-4 md:gap-6 md:w-1/4">
+					<a
+						href=""
+						class="flex flex-row items-center justify-start gap-2 transition-all ease-in  hover:opacity-70"
+					>
+						<img src="../src/img/vistala__logo.png" class="w-8 h-8 md:h-5 md:w-5" alt="Logo" />
+						<h2 class="text-3xl font-semibold text-white md:text-2xl">Vistala</h2>
+					</a>
+					<div class="flex flex-row items-start justify-start gap-4">
+						<p class="text-lg font-normal text-white md:text-base">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ea quam qui. Reiciendis,
+							libero voluptatem.
+						</p>
+					</div>
+				</div>
+				<div
+					class="flex flex-col items-start justify-between w-full gap-10  md:gap-4 md:flex-row md:w-1/2"
+				>
+					<ul class="flex flex-col items-start justify-start w-1/2 gap-1 md:gap-2 md:w-1/4">
+						<li class="text-xl font-semibold text-white md:text-lg">About</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Product</a
+							>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Resource</a
+							>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Term & Condition</a
+							>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>FAQ</a
+							>
+						</li>
+					</ul>
+					<ul class="flex flex-col items-start justify-start w-1/2 gap-1 md:gap-2 md:w-1/4">
+						<li class="text-xl font-semibold text-white md:text-lg">Company</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Our Team</a
+							>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Partner With Us</a
+							>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Privacy & Policy</a
+							>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+								>Features</a
+							>
+						</li>
+					</ul>
+
+					<ul class="flex flex-col items-start justify-start w-1/2 gap-1 md:gap-2 md:w-1/4">
+						<li class="mb-3 text-xl font-semibold text-white md:text-lg">Contact</li>
+						<li class="text-base font-normal leading-tight text-white md:leading-snug">
+							+1397 538 102
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<a
+								href=""
+								class="text-base font-normal text-white transition-all ease-in hover:opacity-70"
+							>
+								Bolang@gmail.com
+							</a>
+						</li>
+						<li class="leading-tight md:leading-snug">
+							<div class="flex flex-row items-center justify-between gap-4">
+								<a href="" class="p-1 text-2xl text-white transition-all ease-in hover:opacity-70"
+									><i class="fab fa-twitter"></i
+								></a>
+								<a href="" class="p-1 text-2xl text-white transition-all ease-in hover:opacity-70"
+									><i class="fab fa-youtube"></i
+								></a>
+								<a href="" class="p-1 text-2xl text-white transition-all ease-in hover:opacity-70"
+									><i class="fab fa-facebook"></i
+								></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- // Footer -->
+	</body>
 </html>
